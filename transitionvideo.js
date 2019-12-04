@@ -4,11 +4,21 @@ export class TransitionVideo {
         this.metadata = metadata;
     }
 
-    playVideo(container) {
+    playVideo(container, fromVideo, moveFromTo) {
         this.container = container; 
+
+        if (fromVideo) {
+            fromVideo.moveTo(moveFromTo);
+        }
+
         this.createVideo();
-        
         this.video.play();
+    }
+
+    moveTo(container) {
+        this.container = container;
+        this.container.innerHTML = "";
+        container.appendChild(this.video);
     }
 
     createVideo() {

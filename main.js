@@ -3,6 +3,7 @@ import {TransitionVideo} from './transitionvideo.js'
 
 const curVideoContainer = document.getElementById('vid2');
 const prevVideoContainer = document.getElementById('vid1');
+let lastVideo; 
 
 // Build buttons
 Object.keys(data).forEach(videoName => {
@@ -20,5 +21,7 @@ function playVideo(videoName) {
     const metadata = data[videoName];
     let video = new TransitionVideo(metadata);
 
-    video.playVideo(curVideoContainer);
+    video.playVideo(curVideoContainer, lastVideo, prevVideoContainer);
+
+    lastVideo = video; 
 }
