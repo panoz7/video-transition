@@ -1,4 +1,8 @@
 import {data} from './data.js'
+import {TransitionVideo} from './transitionvideo.js'
+
+const curVideoContainer = document.getElementById('vid2');
+const prevVideoContainer = document.getElementById('vid1');
 
 // Build buttons
 Object.keys(data).forEach(videoName => {
@@ -14,4 +18,7 @@ Object.keys(data).forEach(videoName => {
 
 function playVideo(videoName) {
     const metadata = data[videoName];
+    let video = new TransitionVideo(metadata);
+
+    video.playVideo(curVideoContainer);
 }
