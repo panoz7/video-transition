@@ -5,7 +5,7 @@ export let data = {
         pauseDuration: 10
     }, 
     'video2' : {
-        video: 'videos/colorshift1.mp4',
+        video: 'videos/colorshift2.mp4',
         pauseFrame: 150,
         pauseDuration: 10
     }
