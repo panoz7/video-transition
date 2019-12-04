@@ -1,1 +1,3 @@
-console.log('testing');
+import {data} from './data.js'
+
+console.log(Object.keys(data));
